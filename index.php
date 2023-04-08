@@ -35,7 +35,7 @@ if(isset($_SESSION['dietitianuserID'])){
 date_default_timezone_set("Asia/Calcutta");
 $date = new DateTime();
 function fetchData($query){
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("www.db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if($conn->connect_error){
         die("Connection failed :" . $conn->connect_error);
     }
@@ -185,12 +185,10 @@ function fetchInformation($client_id){
 
     body {
         font-family: 'NATS', sans-serif !important;
-        margin:0;
     }
 .dashboard{
     margin-top: 1rem;
     margin-left: 17rem;
-    margin-right:0;
     
     display: flex;
     flex-direction: column;
@@ -199,7 +197,7 @@ function fetchInformation($client_id){
 }
 .dashboard_comtainer1{
     display: flex;
-    
+    /* gap: 40rem; */
     justify-content: space-between;
 }
 .container2_rightside {
@@ -214,12 +212,9 @@ function fetchInformation($client_id){
     display: flex;
     justify-content: center;
     align-items: center;
-   
 }
 .addbutton{
     margin-top:0.5rem;
-    display: flex;
-    justify-content: space-between;
 }
 #addbutton{
     display:none;
@@ -243,9 +238,6 @@ function fetchInformation($client_id){
     padding:0.5rem;
     padding-left:2.5rem;
     padding-right:2.5rem;
-    margin-left: 5px;
-    margin-right: 5px;
-    
    
 
 
@@ -347,11 +339,8 @@ function fetchInformation($client_id){
 }
 .details {
     /* margin-left: 45rem; */
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
     border: none;
-    margin-right: 2rem;
+    margin-right: 4rem;
     font-size: 20px;
 }
 .dashboard_container3 {
@@ -422,17 +411,9 @@ function fetchInformation($client_id){
     display: flex;
     gap: 16rem;
 }
-.list_tasklist {
-    width: 100%;
-    background-color: #FDFDFD;
-    border: 1px solid  #e4e1e1;
-    border-radius: 0.6rem;
-    margin-left: 0rem;
+.list_tasklist{
     padding: 1rem;
-    display:flex;
-    justify-content: space-between;
 }
-
 #btn6{
     border: none;
     background-color: white;
@@ -486,12 +467,18 @@ function fetchInformation($client_id){
     display: none;
 }
 
-
+.list_tasklist {
+    width: auto;
+    background-color: #FDFDFD;
+    border: 1px solid  #e4e1e1;
+    border-radius: 0.6rem;
+    margin-left: 2rem;
+}
 
 .tasklist_wrapper2{
     display: flex;
     flex-direction: column;
-    font-size: 1rem;
+    font-size: 1em;
 }
 .tasklist_wrapper3{
     margin-left: 6rem;
@@ -510,8 +497,7 @@ function fetchInformation($client_id){
 .mobile-card-container {
     display: flex;
     flex-wrap: wrap;
-    gap:10px;
-    justify-content:center;
+    gap: 10px;
 }
 .mobileview_clientprogress{
     display: none;
@@ -558,17 +544,16 @@ function fetchInformation($client_id){
     box-shadow: 0 4px 7px rgba(0,0,0,0.12);
     border-radius: 0.7rem;
     padding: 1rem;
-    width: 280px;
-    height: auto;
-    margin-left: 3rem;
-    margin-right: 2rem;
+    width: 260px;
+    height: 283px;
+    margin-left: 1rem;
 }
     .dashboard_container3{
         display: flex;
         flex-direction: column;
     }
     .details{
-        margin-left:1px;
+        margin-left:0px;
     }
     .dashboard_container5{
         display: flex;
@@ -586,8 +571,7 @@ function fetchInformation($client_id){
     }
     #btn7{
         padding-left: 2rem;
-        padding-right: 2rem;
-        
+        padding-right: 2rem
     }
     .tasklist_wrapper3{
         margin-left: 0.5rem;
@@ -607,12 +591,11 @@ function fetchInformation($client_id){
     background-color:white;
     box-shadow: 1px 1px 2px 1px  rgba(0, 0, 0, 0.25);
     border:none;
-    padding:0rem;
+    padding:0.3rem;
     padding-left:1rem;
     padding-right:1rem;
-    position:relative;
-    margin-left: 0.3rem;
-    margin-top: 1rem;
+    position:absoute;
+    margin-left:0.3rem;
 
 
 }
@@ -622,13 +605,12 @@ function fetchInformation($client_id){
 }
 }
 @media screen and (max-width: 720px) {
-  
-    .dashboard{
-        
+    .dashboard_comtainer1{
         display: flex;
-    flex-direction: column;
-    justify-content:center;
-   margin-left:2rem;
+        gap:4rem;
+    }
+    .dashboard{
+        margin-left: 2rem;
     }
     .dashboard_container2{
         display: flex;
@@ -636,75 +618,7 @@ function fetchInformation($client_id){
         gap: 1rem;
         margin-left: 3rem;
     }
-
-
 }
-@media screen and (max-width: 720px){
-
-    .me{
-        overflow: scroll;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-
-
-    }
-}
- @media screen and (max-width: 720px){
-
-    .details{
-        margin-left: 2rem;
-    }
-   
-} 
-@media screen and (max-width: 720px){
-
-.up{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-} 
-@media screen and (max-width: 720px){
-
-.down{
-    padding-left: 3rem;
-}
-.down2{
-    padding-left: 4rem;
-}
-
-
-} 
-@media screen and (max-width: 720px){
-     .symbols1{
-        margin-left:1.5rem;
-    }
-    /* .symbols2{
-        margin-left: 1rem;
-    } */
-    .symbols3{
-        margin-left: 1.5rem;
-
-    }
-    .symbols4{
-        margin-left: 2rem;
-
-    }
-    .symbols5{
-        margin-left: 1.5rem;
-
-    }
-    .symbols6{
-        margin-left: 2rem;
-
-    }
-}
-
-
 </style>
 </head>
 <body>
@@ -713,13 +627,12 @@ function fetchInformation($client_id){
 
         <div class="dashboard_comtainer1">
             <div class="container1_leftside">
-                <p style="font-size: 40px;font-weight:400;margin-bottom: 0;">Dashboard</p>
-                <p style="font-weight:400;font-size:25px">Upcoming Events</p>
+                <p style="font-size: 40px;font-weight:600;margin-bottom: 0;">Dashboard</p>
+                <p style="font-weight:600;font-size:25px">Upcoming Events</p>
                 
             </div>
             <div class="container2_rightside" >
                 <div class="addbutton" id="addbutton">
-                <button id="addbtn" onclick ="window.location.href='task_list.php'">Add Event</button>
                     <button id="addbtn" onclick ="window.location.href='task_list.php'">Add Task</button>
                     <button id="addbtn" onclick ="window.location.href='client_list.php'" class="add">Add Client</button>
                 </div>
@@ -775,7 +688,7 @@ if(!empty($up_event)){
 </div>
 
         <div class="dashboard_container3">
-            <div style="font-size:35px; font-weight:400"> Client Progress</div>
+            <div style="font-size:35px; font-weight:600"> Client Progress</div>
             <div class="details">
                 <a href="client_progress.php"><button id="details">View All</button></a>
                 <a href="client_detailed_progress.php"><button id="details">View Detailed Progress</button></a>
@@ -808,14 +721,12 @@ if(!empty($data)){
         $infom = fetchInformation($data[$i]['client_id']);
 ?>
             <div class="container4_wrapper2">
-            <div class="show">
                 <span style="width: 25%;">
                 <a href="" style="background-color:#FDFDFD; color:black;font-weight:600; font-size:20px; border:none; margin-top:1rem">
                 <img src="images/ronald.jpg" style="width:2rem; background-color:#FDFDFD;border-radius:1rem"> <?php echo($data[$i]['name']) ?></a>
                 </span>
-                </div>
                 <div class="values-container col-12">
-                <span class="col-2"><a href="track_stats_steps.php?id=<?php echo($data[$i]['client_id']) ?>" class="values"><?php echo($infom['steps']['progress'] . '/' . $infom['steps']['goal']) ?></a></span>
+                    <span class="col-2"><a href="track_stats_steps.php?id=<?php echo($data[$i]['client_id']) ?>" class="values"><?php echo($infom['steps']['progress'] . '/' . $infom['steps']['goal']) ?></a></span>
                     <span class="col-2"><a href="track_stats_heart.php?id=<?php echo($data[$i]['client_id']) ?>" class="values" ><?php echo($infom['heart']['progress']) ?> Bpm</a></span>
                     <span class="col-2"><a href="track_stats_water.php?id=<?php echo($data[$i]['client_id']) ?>" class="values" ><?php echo($infom['water']['progress'] . '/' . $infom['water']['goal']) ?> ltrs</a></span>
                     <span class="col-2"><a href="track_stats_sleep.php?id=<?php echo($data[$i]['client_id']) ?>" class="values" ><?php echo(round($infom['sleep']['progress'],2) . '/' . $infom['sleep']['goal']) ?> hrs.</a></span>
@@ -850,43 +761,43 @@ if(!empty($data)){
 
 
         <div class="mob_wrapper1" >
-            <span class="up"><a href="" style=" color:black;font-weight:500; border:none; margin-top:1rem;background-color:white; margin-left:1rem"><span><img src="images/ronald.jpg" style="width:2rem;border-radius:1rem"> <?php echo($data[$i]['name']) ?></span></a></span>
-            <div class="row1" style="display:flex ; gap:2rem;justify-content:center ">
+            <span><a href="" style=" color:black;font-weight:500; border:none; margin-top:1rem;background-color:white; margin-left:1rem"><span><img src="images/ronald.jpg" style="width:2rem;border-radius:1rem"> <?php echo($data[$i]['name']) ?></span></a></span>
+            <div class="row1" style="display:flex ; gap:2rem ">
                     <div class="steps">
                         <div class="symbols">
                         <div style="color:#F6A682"><img src="images/Frame.png" style="width:1.8rem"></div><div style="margin-top:0.2rem; font-weight:500"><span>Steps</span></div></div>
-                        <span class="symbols1" style="font-size:0.9rem;color:#454545 left:3rem;"><?php echo($infom['steps']['progress'] . '/' . $infom['steps']['goal']) ?></span>
+                        <span style="font-size:0.9rem;color:#454545"><?php echo($infom['steps']['progress'] . '/' . $infom['steps']['goal']) ?></span>
                     </div>
                     <div class="steps">
                         <div class="symbols">
                         <div style="color:#EF80B2"><img src="images/Frame-1.png" style="width:1.8rem"></div><div style="margin-top:0.2rem; font-weight:500"><span>Heart Rate</span></div></div>
-                        <span class="symbols2" style="font-size:0.9rem;color:#454545"><?php echo($infom['heart']['progress']) ?> bpm</span>
+                        <span style="font-size:0.9rem;color:#454545"><?php echo($infom['heart']['progress']) ?> bpm</span>
                     </div>
             </div>
 
-            <div class="row2" style="display:flex ; gap:2rem;justify-content:center">
+            <div class="row2" style="display:flex ; gap:2rem">
                     <div class="steps">
                         <div class="symbols">
                         <div style="color:#8FAFF3"><img src="images/Frame-2.png" style="width:1.8rem"></div><div style="margin-top:0.2rem; font-weight:500"><span>Water</span></div></div>
-                        <span class="symbols3" style="font-size:0.9rem;color:#454545"><?php echo($infom['water']['progress'] . '/' . $infom['water']['goal']) ?> ltrs</span>
+                        <span style="font-size:0.9rem;color:#454545"><?php echo($infom['water']['progress'] . '/' . $infom['water']['goal']) ?> ltrs</span>
                     </div>
                     <div class="steps">
                         <div class="symbols">
                         <div style="color:#7550E2"><img src="images/Frame-3.png" style="width:1.8rem"></div><div style="margin-top:0.2rem; font-weight:500"><span>Sleep</span></div></div>
-                        <span class="symbols4" style="font-size:0.9rem;color:#454545">7/8 hrs.</span>
+                        <span style="font-size:0.9rem;color:#454545">7/8 hrs.</span>
                     </div>
             </div>
 
-            <div class="row3" style="display:flex ; gap:2rem;justify-content:center">
+            <div class="row3" style="display:flex ; gap:2rem">
                     <div class="steps">
                         <div class="symbols">
                         <div style="color:#788F96"><img src="images/Frame-4.png" style="width:1.8rem"></div><div style="margin-top:0.2rem; font-weight:500"><span>Weight</span></div></div>
-                        <span class="symbols5" style="font-size:0.9rem;color:#454545"><?php echo($infom['weight']['progress'] . '/' . $infom['weight']['goal']) ?> kg</span>
+                        <span style="font-size:0.9rem;color:#454545"><?php echo($infom['weight']['progress'] . '/' . $infom['weight']['goal']) ?> kg</span>
                     </div>
                     <div class="steps">
                         <div class="symbols">
                         <div style="color:#E388A0"><img src="images/Frame-5.png" style="width:1.8rem"></div><div style="margin-top:0.2rem; font-weight:500"><span>Calories</span></div></div>
-                        <span class="symbols6" style="font-size:0.9rem;color:#454545"><?php echo($infom['calorie']['progress'] . '/' . $infom['calorie']['goal']) ?> kcal</span>
+                        <span style="font-size:0.9rem;color:#454545"><?php echo($infom['calorie']['progress'] . '/' . $infom['calorie']['goal']) ?> kcal</span>
                     </div>
             </div>
         </div>
@@ -902,21 +813,107 @@ if(!empty($data)){
 
 <!----------------------------------------------------------------------------------------------------------------------------------->
         <div class="dashboard_container5">
+
+
+            <!-- chat -->
+
+<div class="container5_wrapper2">
+                <div class="tasklist">
+                    <p style="font-size:1.3rem ; font-weight:600">Messages</p>
+
+                    <span><a href="chat_home.php" style=" color:#717171 ; border:none">View All</a></span>
+                </div>
+                <!-- chat just added here -->
+                <div class="d-flex flex-coloumn chat messages" style="outline: 2px solid #EEEEEE; padding:20px!important;">
+                    <div class="" style="width:360px">
+                        <?php
+                        $counter = 0;
+                        foreach ($conversations as $conversation) { ?>
+                            <li class="list-group-item">
+                                <a href="chat_messages.php?user=<?= $conversation['dietitianuserID'] ?>" class="d-flex
+	    				          justify-content-between
+	    				          align-items-center">
+                                    <div class="d-flex
+	    					            align-items-center">
+                                        <img src="chat/uploads/<?= $conversation['p_p'] ?>" class="rounded-circle" style="width:40px">
+                                        <h3 class="fs-xs m-2 text-dark">
+                                            <?= $conversation['name'] ?><br>
+                                            <small class="small-text-message">
+                                                <?php
+                                                echo lastChat($_SESSION['dietitian_id'], $conversation['dietitianuserID'], $conn);
+                                                ?>
+                                            </small>
+
+                                        </h3>
+                                    </div>
+                                    <div class="d-flex
+	    					            align-items-center " style="margin-left: auto;">
+                                        <h3 class="fs-xs p-2 text-dark">
+
+                                            <small class="small-text-message">
+                                                <?php
+                                                echo last_time($conversation['last_seen']);
+                                                ?>
+                                            </small><br />
+                                            <img class="" src="icons/DoubleTick.svg" style="width:16px">
+                                        </h3>
+
+
+                                    </div>
+                                    <?php if (last_seen($conversation['last_seen']) == "1") { ?>
+                                        <div title="online">
+
+                                        </div>
+                                    <?php } else { ?>
+                                        <div title="offline">
+                                        </div>
+                                    <?php } ?>
+                                </a>
+                            </li>
+                        <?php
+                          $counter++;
+                          if ($counter == 4) {
+                              break;
+                          }
+                    } ?>
+                    </div>
+
+
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+                    <script>
+                        $(document).ready(function() {
+
+                            let lastSeenUpdate = function() {
+                                $.get("app/ajax/update_last_seen.php");
+                            }
+                            lastSeenUpdate();
+
+                            setInterval(lastSeenUpdate, 10000);
+
+                        });
+                    </script>
+                </div>
+            </div>
+
+
+
+
             <div class="container5_wrapper1">
                 <div class="tasklist">
                     <p style="font-size:1.3rem ; font-weight:600">My Task List</p>
-                    <span class="down"><a href="task_list.php" style="background-color:white; color:#717171; border:none" >View All</a></span> 
+                    <span><a href="task_list.php" style="background-color:white; color:#717171; border:none" >View All</a></span> 
                 </div>
                 <div class="list_tasklist">
-                    <button id="btn6" class="task-btn" onclick="openTask('btn6','today_tasks')"><strong>Today</strong></button>
+                    <button id="btn6" class="task-btn" onclick="openTask('btn6','today_tasks')">Today</button>
                     <button id="btn7" class="btn6 task-btn" onclick="openTask('btn7','upcoming_tasks')">Upcoming</button>
                     <div id="today_tasks">
 <?php 
 $query = "SELECT * FROM `dietition_tasks` WHERE dietitianuserID = '{$dietitian_id}' AND date = '{$today->format('Y-m-d')}' ORDER BY date,start_time LIMIT 3";
 // $query = "SELECT * FROM `dietition_tasks` WHERE dietitianuserID = 'John_wayne' AND date = '2023-02-03' ORDER BY date,start_time LIMIT 3";
 // echo($today->format('Y-m-d'));
-$con = new mysqli("localhost", "root", "", "infits");
-$result = mysqli_query($con, $query);
+$conn = new mysqli("www.db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
+$result = mysqli_query($conn, $query);
 $rowcount=mysqli_num_rows($result);
 //   printf("Result set has %d rows.\n",$rowcount);
 //   while($row = mysqli_fetch_assoc($result)){
@@ -935,7 +932,7 @@ if (mysqli_num_rows($result) > 0) {
 //
 ?>
                         <!-- task -->
-                        <div class="list_tasklist_container" >
+                        <div class="list_tasklist_  tainer" >
                             <div class="tasklist_wrapper1">
                                 <div><img src="images/foodrecipe.jpeg" style="width:2rem; background-color:#FDFDFD;border-radius:0.5rem"></div>
                             </div>
@@ -954,8 +951,8 @@ if (mysqli_num_rows($result) > 0) {
                     <div id="upcoming_tasks">
 <?php 
 $query = "SELECT * FROM `dietition_tasks` WHERE dietitianuserID = '{$dietitian_id}' AND date > '{$today->format('Y-m-d')}' ORDER BY date,start_time LIMIT 3";
-$con = new mysqli("localhost", "root", "", "infits");
-$result = mysqli_query($con, $query);
+$conn = new mysqli("www.db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
+$result = mysqli_query($conn, $query);
 
 if (mysqli_num_rows($result) > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
@@ -1036,93 +1033,9 @@ if (mysqli_num_rows($result) > 0) {
                 
             </div> -->
          
-
-    
-
-
-            <!-- chat -->
-
-<div class="container5_wrapper2">
-                <div class="tasklist">
-                    <p style="font-size:1.3rem ; font-weight:600">Messages</p>
-
-                    <span class="down2"><a href="chat_home.php" style=" color:#717171 ; border:none">View All</a></span>
-                </div>
-                <!-- chat just added here -->
-                <div class="d-flex flex-coloumn chat messages" style="outline: 2px solid #EEEEEE; padding:20px;">
-                    <div class="" >
-                        <?php
-                        $counter = 0;
-                        foreach ($conversations as $conversation) { ?>
-                            <li class="list-group-item">
-                                <a href="chat_messages.php?user=<?= $conversation['dietitianuserID'] ?>" style="display: flex !important;align-items: center !important;justify-content: space-between ;">
-                                    <div class="d-flex
-	    					            align-items-center">
-                                        <img src="chat/uploads/<?= $conversation['p_p'] ?>" class="rounded-circle" style="width:40px">
-                                        <h3 class="fs-xs m-2 text-dark">
-                                            <?= $conversation['name'] ?><br>
-                                            <small class="small-text-message">
-                                                <?php
-                                                echo lastChat($_SESSION['dietitian_id'], $conversation['dietitianuserID'], $conn);
-                                                ?>
-                                            </small>
-
-                                        </h3>
-                                    </div>
-                                    <div class="d-flex
-	    					            align-items-center " style="margin-left: auto;">
-                                        <h3 class="fs-xs p-2 text-dark">
-
-                                            <small class="small-text-message">
-                                                <?php
-                                                echo last_time($conversation['last_seen']);
-                                                ?>
-                                            </small><br />
-                                            <img class="" src="icons/DoubleTick.svg" style="width:16px">
-                                        </h3>
-
-
-                                    </div>
-                                    <?php if (last_seen($conversation['last_seen']) == "1") { ?>
-                                        <div title="online">
-
-                                        </div>
-                                    <?php } else { ?>
-                                        <div title="offline">
-                                        </div>
-                                    <?php } ?>
-                                </a>
-                            </li>
-                        <?php
-                          $counter++;
-                          if ($counter == 4) {
-                              break;
-                          }
-                    } ?>
         </div>
 
-
-                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-                    <script>
-                        $(document).ready(function() {
-
-                            let lastSeenUpdate = function() {
-                                $.get("app/ajax/update_last_seen.php");
-                            }
-                            lastSeenUpdate();
-
-                            setInterval(lastSeenUpdate, 10000);
-
-                        });
-                    </script>
     </div>
-            </div>
-
-
-
-
-            
     <script>
         function openTask(b,id){
             const taskbtn = document.getElementsByClassName('task-btn');
@@ -1135,29 +1048,6 @@ if (mysqli_num_rows($result) > 0) {
             btn.classList.add = 'active-btn';
         }
         document.getElementById('btn6').click();
-    //     function redirectTo(id, topage) {
-    // //alert(topage);
-
-    // // createElement Create a new form element
-    // const form = document.createElement('form');
-
-    // // Define form attributes
-    // form.method = 'POST';
-    // form.action = topage;
-
-    // // input element for the ID value
-    // const idInput = document.createElement('input');
-    // idInput.type = 'hidden';
-    // idInput.name = 'id';
-    // idInput.value = id;
-
-    // // Append the input element to the form
-    // form.appendChild(idInput);
-
-    // // Submiting the form to redirect to the update_plan.php
-    // document.body.appendChild(form);
-    // form.submit();
-    // }
     </script>
 </body>
 </html>

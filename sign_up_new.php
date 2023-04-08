@@ -737,33 +737,6 @@ color: #4B99FB;
                     </div>
             </div>
        </div>
-
-<script type="text/javascript">
-// google signin
-function onSignIn(googleUser) {
-    var profile = googleUser.getBasicProfile();
-    console.log('profile')
-
-    if (profile) {
-        $.ajax({
-            type: 'POST',
-            url: 'social_login.php',
-            data: {
-                id: profile.getId(),
-                name: profile.getName(),
-                email: profile.getEmail()
-            }
-        }).done(function(data) {
-            window.location.href = 'index.php';
-        }).fail(function() {
-            alert("Something went wrong !!");
-        });
-    }
-    
-
-
-}
-</script>
     </div>
 </body>
 </html>

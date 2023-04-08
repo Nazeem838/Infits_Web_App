@@ -1,10 +1,11 @@
 <?php
 include "navbar.php";
+include "config.php";
 $id = $_SESSION["dietitianuserID"];
-$sql = "SELECT * FROM dietitian Where dietitianuserID ='$id' ";
+$sql = "SELECT * FROM dietitian Where dietitianuserID = $id ";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($result);
-$name =  explode(" ", $row['dietitianuserID'] );
+$name =  explode(" ", $row['name'] );
 ?>
 <!DOCTYPE HTML>
 <html lang="en" dir="ltr">
@@ -153,7 +154,7 @@ body {
     background-repeat: no-repeat;
     border-radius: 20px;
     box-shadow: 2px 2px rgb(0, 0, 0)888;
-    text-align:center;
+    align-text:center;
     width: 160px;
     height: 171px !important;
 
@@ -215,31 +216,27 @@ body {
     height: 171px;
 }
 
-/* .info {
-     position: absolute;
-     bottom: 0px;
-    display: flex;
-    justify-content: center;
-    width: inherit;
-    height: inherit;
-    text-align: center;
-} */
-
 .info {
      position: absolute;
      bottom: 0px;
+    /* display: flex;
+    justify-content: center; */ 
+    /* width: inherit;
+    height: inherit; */
     text-align: center;
+
+
 }
 
-/* .info h3 {
-    font-family: 'Pacifico', cursive; 
+.info h3 {
+    /* font-family: 'Pacifico', cursive; 
     font-weight: 400;
 	color: black;
 	font-size: 42px;
 	margin: 0 30px;
 	padding: 100px 0 0 0;
-	line-height:1.5; 
-} */
+	line-height:1.5;  */
+}
 
 .info p {
     color: rgb(9, 9, 9);
@@ -289,18 +286,6 @@ border-radius: 18px;
     .webview{
         display:none;
     }
-    .mob_wrapper1{
-    
-    margin:2rem;
-    display: flex;
-    
-
-     width: auto;
-height: auto;
-
-
-
-}
     .mobview{
         display:flex;
         flex-direction:column;
@@ -320,9 +305,9 @@ height: auto;
             <img src="./images/settingDp.svg" class="rounded" alt="...">
 
             <!-- while linking use this  -->
-            <!-- <h3 class="display-6 right-float"><br /> <?php echo ($name[0]) ?><br /> <?php echo($name[1])?></h3> -->
+            <h3 class="display-6 right-float"><br /> <?php echo ($name[0]) ?><br /> <?php echo($name[1])?></h3>
 
-            <h3 class="display-6 right-float" style = "margin-left: 25px;font-weight:400"><br />John <br/> Wayne</h3>
+            <!-- <h3 class="display-6 right-float" style = "margin-left: 25px;font-weight:400"><br />John <br/> Wayne</h3> -->
 
         </div>
     </div>
@@ -337,7 +322,7 @@ height: auto;
                 </div>
             </li>
 </a>
- <a href="#">
+ <a href="referral_code.php">
             <li>
                 <div class="box img-2"> 
                     <img src="icons/settings/icon1.svg" alt="">       
@@ -371,11 +356,11 @@ height: auto;
             </li>
               </a>
               <!-- // -->
-              <a href="notification.php">
+              <a href="#">
             <li>
                 <div class="box img-6">
                     <img src="icons/settings/icon4.svg" alt="">
-                    <p style="text-align:center!important ;font-weight: 400;color:black;font-size: 25px;margin-top:3rem;">Notifications</p>
+                    <p style="text-align:center !importan;font-weight: 400;color:black;font-size: 25px;margin-top:3rem">Notifications</p>
                 </div>
             </li>
               </a>
@@ -386,20 +371,18 @@ height: auto;
         </div> -->
     </div>
     <div>
-        <form action="logout.php">
-            <button tupe="submit" class="logout">Logout</button>
-        </form>
+        <button class="logout">Logout</button>
+        
     </div>
     </div>
 <!--------------------------------------------------MOBVIEW------------------------------>
 
     <div class="mobview">
         <div class="profileimg" >
-        <img src="./images/settingDp.svg" id="pfp" style=" display: block;margin-left: auto;margin-right: auto;width:30%">
-        <p  style = "font-weight:400;font-size:30px;text-align:center">John Wayne</p>
+        <img src="./images/settingDp.svg" id="pfp" style="margin-left:9.5rem;width:30%">
+        <p  style = "margin-left: 25px;font-weight:400;font-size:30px;margin-top:0;text-align:center">John Wayne</p>
         </div>
-        
-         
+
         <div class="mob_wrapper1">
             <img src="icons/settings/icon1.svg" alt="">
             <p style="margin-top:2px;font-size:28px;margin-left:15px;font-weight:500">Referral Code</p>     
@@ -425,9 +408,8 @@ height: auto;
             <p style="margin-top:2px;font-size:28px;margin-left:15px;font-weight:500">Referral Code</p>     
         </div>
         <div>
-        <form action="logout.php">
-            <button tupe="submit" class="logout">Logout</button>
-        </form>
+        <button class="logout">Logout</button>
+        
     </div>
         
     </div>

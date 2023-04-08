@@ -1,10 +1,10 @@
 <?php
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'infits');
+// define('DB_SERVER', 'www.db4free.net');
+// define('DB_USERNAME', 'infits_free_test');
+// define('DB_PASSWORD', 'EH6.mqRb9QBdY.U');
+// define('DB_NAME', 'infits_db');
 // Try connecting to the Database
-$conn = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$conn = new mysqli("www.db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
 //Check the connection
 if($conn == false){
     dir('Error: Cannot connect');

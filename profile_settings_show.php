@@ -1,11 +1,16 @@
 <?php 
  include "navbar.php";
-    $name = $_SESSION['name'];
-    $currentUser = substr($name, 0, -4);
-    $query = "select * from `dietitian` where `dietitianuserID` = '$currentUser' ";
-    $result = mysqli_query($conn, $query); // Use curly braces to access array members inside strings
-    if($result->num_rows > 0){ 
-      while($row = $result->fetch_assoc()){
+ include "config.php";
+    $dietitianuserID = $_SESSION['dietitianuserID'];
+    // echo $dietitianuserID;
+    // $name = substr($name, 0, -4);
+    $query = "SELECT * FROM `dietitian` where dietitianuserID = $dietitianuserID;";
+    $result = mysqli_query($conn, $query);
+    // Use curly braces to access array members inside strings
+    //  echo mysqli_num_rows($result);
+    //  exit;
+    if(mysqli_num_rows($result)>0){ 
+      while($row = mysqli_fetch_assoc($result)){
         $dietitianuserID = $row['dietitianuserID'];
         $name = $row['name'];
         $email = $row['email'];
@@ -107,9 +112,6 @@ body {
 
     /* Shared */
     .addBtn {
-        text-decoration: none;
-        align-content: center;
-        justify-content: center;
         width: 342px;
         height: 48px;
         background: #0177FD;
@@ -124,8 +126,7 @@ body {
 
     .center-flex {
         display: flex;
-        /* margin-left:13.5rem; */
-        padding-left: 2.5rem;
+        margin-left:20.3rem;
     }
 
     .signup {
@@ -151,18 +152,11 @@ body {
         justify-content: top;
         flex-direction: column;
     }
-    .flex-left{
-        flex-shrink: 3;
-    }
-    .flex-right{
-        flex-shrink: 3;
-        display: flex;
-        align-items: center;
-    }
+
     .flex-main {
         display: flex;
-        flex-direction:row;
-        justify-content: space-between;
+        flex-direction: row;
+        justify-content: space-evenly;
         flex-wrap: wrap;
         align-content: flex-start;
         position:relative;
@@ -171,13 +165,7 @@ body {
     .align-middle {
         margin-left: 5%;
     }
-    .rating{
-        align-self: center;
-        font-family: 'NATS';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 25.4545px;
-    }
+
     .reset a {
         color: RoyalBlue;
     }
@@ -199,8 +187,8 @@ body {
     border-radius: 10px;
     padding-top:0.5rem;
         font-size: 20px;
-        text-decoration: none;
-        margin-left:3rem;
+        underline:none;
+        margin-left:5.5rem;
     }
     .sharebutton:hover{
       background-color:white;
@@ -263,100 +251,56 @@ body {
 .leftinput{
     width:342px;
 }
-    /***************media query for mobile *******************/
     @media screen and (max-width: 720px) {
-        .input-sec{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            
-        }
         .popup{
             margin:30%;
             margin-top:50%;
             width:40%;
         }
         .heading{
-            /* margin-left:2rem !important; */
+            margin-left:2rem !important;
         }
         .leftinput{
-            width:90% !important;
+            width:auto !important;
         }
         .flex-left{
-            /* margin-left:2rem; */
+            margin-left:2rem;
         }
         .flex-middle{
-            /* margin-left:2rem; */
+            margin-left:2rem;
         }
         .flex-main_wrapper{
-        width: 100%;
-            /* display:flex;
-            flex-direction:column; */
+            display:flex;
+            flex-direction:column;
         }
         .flex-main{
             display:flex;
             flex-direction:column;
         }
         .user{
-            /* margin-left:6rem !important; */
+            margin-left:6rem !important;
         }
         .star{
-            /* margin-left:7.5rem !important; */
+            margin-left:7.5rem !important;
         }
         .center-flex {
         display: flex;
         flex-direction:column;
-        align-items: center;
         gap:1rem;
-        margin-left:0;
-        width: 100%;
+        margin-left:2.3rem;
     }
     .addBtn{
-        width:200px !important;
+        width:auto !important;
         margin-right:2rem;
     }
     .sharebutton{
-        width:200px !important;
+        width:auto !important;
         margin-left:0;
         margin-right:2rem;
     }
     }
-    /***************media query for tablet devices *******************/
-    @media only screen and (min-width:720px) and (max-width:1180px) {
-    .center-flex{
-        display: flex;
-        align-content: center;
-        justify-content: center;
 
-    }
-    .flex-right{
-        width: 100% !important;
-    }
-    .addBtn{
-        width: 200px !important;
-    }
-    .sharebutton{
-        width: 200px !important;
-    }
-    .flex-left input{
-        width: 150px !important;
-        /* margin-left: 5rem; */
-    }
-    .flex-middle input{
-        width: 150px !important;
-    }
-    .leftinput{
-        width: 150px !important;  
-    }
-    }
-    /***************media query for large devices *******************/
-   @media screen and (min-width:1280px) {
-    .center-flex{  
-        display: flex;
-        align-content: center;
-        justify-content: center;  
-    }
-   }
+   
     </style>
 
 </head>
@@ -366,40 +310,39 @@ body {
 
     <div id="content">
 
-        <!-- <br> -->
+        <br>
+        <h4 class="heading" style="margin-left:21rem; font-size:40px"> Profile Settings</h4>
 
         <!--<div class="add-client-area">-->
         <form method="post" action="" enctype="multipart/form-data">
 
-                <!-- <br> -->
+            <br>
 
-                <div class="flex-main" style="">
+            <div class="flex-main">
 
-                <div style="display:flex; flex-direction: column; gap:3rem;" class="flex-main_wrapper col-lg-9 mt-5 col-md-12 ">
-                 <h4 class="heading ps-5" style=" font-size:40px;"> Profile Settings</h4>
-                <div class="input-sec d-flex flex-lg-row align-center justify-content-center" style=" gap: 3rem;"> 
+                <div style="display:flex; gap:5.5rem" class="flex-main_wrapper">
                 <div class="flex-left" style="font-size:18px;display:flex;flex-direction:column;justify-content:center">
                     User ID <br> <input  class="leftinput" name="dietitianuserID" value="<?php echo $dietitianuserID; ?>" disabled style="color: #AEAEAE;" />
                     <br>
 
-                    Name <br> <input class="leftinput"  name="Name" value="<?php echo $name; ?>" style="color: #AEAEAE;" disabled />
+                    Name <br> <input name="Name" value="<?php echo $name; ?>" style="color: #AEAEAE;" disabled />
                     <br>
 
-                    Email <br> <input class="leftinput"  name="email" value="<?php echo $email; ?>" disabled style="color: #AEAEAE;"/>
+                    Email <br> <input name="email" value="<?php echo $email; ?>" disabled style="color: #AEAEAE;"/>
                     <br>
 
-                    Mobile Number <br> <input class="leftinput"  name="mobile" value="<?php echo $mobile; ?>" disabled  style="color: #AEAEAE;"/>
+                    Mobile Number <br> <input name="mobile" value="<?php echo $mobile; ?>" disabled  style="color: #AEAEAE;"/>
                     <br>
 
                     Qualification <br>
                     <?php if (is_null($qualification) or $qualification=='') { ?>
-                    <input type="text" class="leftinput"  name="qualification" value="<?php echo 'XXXXXX'; ?>" disabled style="color: #AEAEAE;">
+                    <input type="text" name="qualification" value="<?php echo 'XXXXXX'; ?>" disabled style="color: #AEAEAE;">
                     <?php } else { ?>
-                    <input name="qualification" class="leftinput"  value="<?php echo $qualification; ?>" disabled style="color: #AEAEAE;">
+                    <input name="qualification" value="<?php echo $qualification; ?>" disabled style="color: #AEAEAE;">
                     <?php } ?>
                     <br>
 
-                    Password: <br> <input type="password" class="leftinput" name="password" value="<?php echo $password; ?>" disabled style="color: #AEAEAE;"/>
+                    Password: <br> <input type="password" name="password" value="<?php echo $password; ?>" disabled style="color: #AEAEAE;"/>
                     <br>
 
 
@@ -429,7 +372,7 @@ body {
 
                     Gender: <br>
                     <?php if (is_null($gender) or $gender=='') { ?>
-                    <input type="text" name="gender" value="<?php echo 'Male'; ?>" disabled class="leftinput" style="color: #AEAEAE;">
+                    <input type="text" name="gender" value="<?php echo 'XXXX'; ?>" disabled class="leftinput" style="color: #AEAEAE;">
                     <?php } else { ?>
                     <input type="text" name="gender" value="<?php echo $gender; ?>" disabled class="leftinput" style="color: #AEAEAE;">
                     <?php } ?>
@@ -453,14 +396,13 @@ body {
 
                 </div>
                 </div>
-                </div>
 
-                <div class="flex-right mt-5" style="" >
+                <div class="flex-right" >
 
-                    <img class = "user" src="<?php echo $path;?>"  style="height: 154px; width: 154px; border-radius:25px" alt="profilePhoto" />
-                    <div class="star" style="display: flex; gap:7px; margin-bottom:2rem;background:none;">
-                        <img src="images/star.png"style="background:none; width: 28px; height: 28px;">
-                         <p style="rating">4.8</p>
+                    <img class = "user" src="<?php echo $path;?>"  style="height: 100px; width: 100px; border-radius: 30%;" alt="" />
+                    <div class="star" style="margin-left:2.7rem;margin-bottom:2rem;background:none">
+                        <img src="images/star.png"style="background:none"ui >
+                        <span>4.8</span>
                     </div>
 
                     <button class='socials'><img src="images/WhatsApp.svg" style="height: 33px; "> &nbsp; <a
@@ -486,20 +428,18 @@ body {
 
             </div>
 
-            <div class="center-flex col-lg-10 col-sm-12 offset-lg-2 col-md-9 offset-md-3 col-xl-7 offset-xl-2"> <br> <br>
-                <a id="addBtn"  href="profile_settings_edit.php">
+            <div class="center-flex"> <br> <br>
+                <a id="addBtn" href="profile_settings_edit.php">
                     <div class="addBtn">
-                        <center >Edit Profile Details</center>
+                        <center>Edit Profile Details</center>
                     </div>
                 </a>
 
-                <a id="sharebutton" style="text-decoration: none;" href="#popup1" >
+                <a id="sharebutton" href="#popup1" >
                     <div class="sharebutton">
                         <center >Share Profile</center>
                     </div>
                 </a>
-                <!-- <button id="addBtn" href="profile_settings_edit.php" type="button" class=" addBtn btn btn-primary btn-lg">Edit Profile Details</button>
-                <button id="sharebutton" href="#popup1" type="button" class="btn btn-outline-primary btn-lg"> Share Profile</button> -->
                 <!--link not working to move to next page -->
             </div>
             <br>

@@ -21,6 +21,7 @@ if (isset($_POST['reg_user'])) {
   $mobile = mysqli_real_escape_string($conn, $_POST['mobile']);
   $password = mysqli_real_escape_string($conn, $_POST['password']);
   $password_2 = mysqli_real_escape_string($conn, $_POST['password_2']);
+  $qualification = "verified";
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -53,8 +54,8 @@ if (isset($_POST['reg_user'])) {
   if (count($errors) == 0) {
   //	$password = md5($);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO dietitian (dietitianuserID, name, email, mobile, password) 
-  			  VALUES('$dietitianuserID','$name', '$email', '$mobile', '$password')";
+  	$query = "INSERT INTO dietitian (dietitianuserID, name, email, mobile, password, qualification) 
+  			  VALUES('$dietitianuserID','$name', '$email', '$mobile', '$password', '$qualification')";
   	mysqli_query($conn, $query);
 
     # creating the Session
@@ -146,4 +147,4 @@ if (isset($_POST['login_user'])) {
   }
   
  
-  ?>
+  ?>  
