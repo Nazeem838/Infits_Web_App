@@ -118,13 +118,17 @@ function fetchInformation($client_id){
     // $mins = fetchData($query)[0]['SUM(minsSlept)'];
     // $data['sleep']['progress'] = (float) $hours + $mins/60;
 
-    $query = "SELECT avg(weight) FROM weighttracker WHERE clientID= '$client_id' AND `date` >= '{$date->format('y-m-d')} 00:00:00' AND `date` <= '{$date->format('y-m-d')} 23:59:59'";
+    // $query = "SELECT avg(weight) FROM weighttracker WHERE clientID= '$client_id' AND `date` >= '{$date->format('y-m-d')} 00:00:00' AND `date` <= '{$date->format('y-m-d')} 23:59:59'";
+    // $value = fetchData($query);
+    // if($value[0]['avg(weight)'] != ''){
+    //     $data['weight']['progress'] =$value[0]['avg(weight)'];
+    // }else{
+    //     $data['weight']['progress'] = 0;
+    // }
+    $query = "SELECT AVG(weight) as avg_weight FROM weighttracker WHERE clientID = '$client_id' AND `date` BETWEEN '{$date->format('y-m-d')} 00:00:00' AND '{$date->format('y-m-d')} 23:59:59'";
     $value = fetchData($query);
-    if($value[0]['avg(weight)'] != ''){
-        $data['weight']['progress'] =$value[0]['avg(weight)'];
-    }else{
-        $data['weight']['progress'] = 0;
-    }
+    $data['weight']['progress'] = !empty($value[0]['avg_weight']) ? $value[0]['avg_weight'] : 0;
+
     
     // $query = "SELECT SUM(caloriesconsumed) FROM calorietracker WHERE clientID= '$client_id' AND `time` >= '{$date->format('y-m-d')} 00:00:00' AND `time` <= '{$date->format('y-m-d')} 23:59:59'";
     // $value = fetchData($query);
