@@ -2,7 +2,7 @@
 include "navbar.php";
 include "config.php";
 $id = $_SESSION["dietitianuserID"];
-$sql = "SELECT * FROM dietitian Where dietitianuserID = $id ";
+$sql = "SELECT * FROM dietitian Where dietitianuserID = '$id' ";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_assoc($result);
 $name =  explode(" ", $row['name'] );

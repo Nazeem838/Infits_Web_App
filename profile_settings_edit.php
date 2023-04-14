@@ -5,7 +5,7 @@
     $dietitianuserID = $_SESSION['dietitianuserID'];
     // $name = $_SESSION['name'];
     // $currentUser = substr($name, 0, -4);
-    $query = "SELECT * from dietitian where dietitianuserID = $dietitianuserID ";
+    $query = "SELECT * from dietitian where dietitianuserID = '$dietitianuserID' ";
     $result = mysqli_query($conn, $query); // Use curly braces to access array members inside strings
     if(mysqli_num_rows($result)>0){ 
       while($row = mysqli_fetch_assoc($result)){
@@ -79,7 +79,7 @@ if(isset($_POST['update']) || isset($_FILES['my_image'])) {
               experience = '$experience',
               age = $age,
               profilePhoto = '$imageandpath'
-              where dietitianuserID = $dietitianuserID";
+              where dietitianuserID = '$dietitianuserID'";
     mysqli_query($conn, $query);
 
   	$_SESSION['success'] = "Information Updated";
