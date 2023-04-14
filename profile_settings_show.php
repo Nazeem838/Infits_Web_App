@@ -4,7 +4,7 @@
     $dietitianuserID = $_SESSION['dietitianuserID'];
     // echo $dietitianuserID;
     // $name = substr($name, 0, -4);
-    $query = "SELECT * FROM `dietitian` where dietitianuserID = $dietitianuserID;";
+    $query = "SELECT * FROM `dietitian` where dietitianuserID = '$dietitianuserID';";
     $result = mysqli_query($conn, $query);
     // Use curly braces to access array members inside strings
     //  echo mysqli_num_rows($result);
@@ -460,6 +460,7 @@ body {
             <img src="images/Instagram.png" >
 		</div>
 	</div>
+                    </div>
 
 
 </body>
