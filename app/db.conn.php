@@ -1,14 +1,14 @@
 <?php 
 
 # server name
-$sName = "localhost";
+$sName = "db4free.net";
 # user name
-$uName = "root";
+$uName = "infits_free_test";
 # password
-$pass = "";
+$pass = "EH6.mqRb9QBdY.U";
 
 # database name
-$db_name = "infits";
+$db_name = "infits_db";
 $conn1 = mysqli_connect($sName, $uName, $pass, $db_name);
 
 #creating database connection
