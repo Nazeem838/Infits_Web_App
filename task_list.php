@@ -3,7 +3,7 @@
 include 'navbar.php';
 
 if(isset($_SESSION['dietitianuserID'])){
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if($conn->connect_error){
         die("Connection failed :" . $conn->connect_error);
     }
@@ -15,7 +15,7 @@ if(isset($_SESSION['dietitianuserID'])){
     }
 }
 if(isset($_POST['add_calender'])){
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if($conn->connect_error){
         die("Connection failed :" . $conn->connect_error);
     }
@@ -26,7 +26,7 @@ if(isset($_POST['add_calender'])){
     exit();
 }
 if(isset($_POST['edit_task'])){
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if($conn->connect_error){
         die("Connection failed :" . $conn->connect_error);
     }
@@ -41,7 +41,7 @@ if(isset($_POST['edit_task'])){
     exit();
 }
 if(isset($_POST['delete_task'])){
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if($conn->connect_error){
         die("Connection failed :" . $conn->connect_error);
     }

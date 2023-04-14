@@ -11,7 +11,7 @@ if(isset($_SESSION['dietitianuserID'])){
 date_default_timezone_set("Asia/Calcutta");
 $date = new DateTime();
 function fetchData($query){
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if($conn->connect_error){
         die("Connection failed :" . $conn->connect_error);
     }

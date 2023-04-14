@@ -9,7 +9,7 @@ if (isset($_POST['clientList'])) {
 $dietitianuserID = $_SESSION['dietitianuserID'];
 // Handling Ajax Requests here
 if (isset($_POST['sidebarselection'])) {
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if ($conn->connect_error) {
         die("Connection failed :" . $conn->connect_error);
     }
@@ -84,7 +84,7 @@ if (isset($_POST['sidebarselection'])) {
 
 if (isset($_POST['update_all'])) {
 
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if ($conn->connect_error) {
         die("Connection failed :" . $conn->connect_error);
     }
@@ -167,7 +167,7 @@ if (isset($_POST['update_all'])) {
 
 // New Reminder Form 
 if (isset($_POST['create_reminder'])) {
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if ($conn->connect_error) {
         die("Connection failed :" . $conn->connect_error);
     }
@@ -191,7 +191,7 @@ if (isset($_POST['create_reminder'])) {
     }
 
     if (isset($_POST['create_reminder_calorie'])) {
-        $conn = new mysqli("localhost", "root", "", "infits");
+        $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
         if ($conn->connect_error) {
             die("Connection failed :" . $conn->connect_error);
         }

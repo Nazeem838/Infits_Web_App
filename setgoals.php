@@ -13,7 +13,7 @@ if(isset($_POST['update_goal'])){
     $clients = $_POST['clients'];
     $goal = $_POST['goal'];
     $dietitianuserID = $_POST['dietitianuserID'];
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if($conn->connect_error){
         die("Connection failed :" . $conn->connect_error);
     }
@@ -49,7 +49,7 @@ if(isset($_POST['update'])){
     $client = $_POST['client'];
     $goal = $_POST['goal'];
     $dietitianuserID = $_POST['dietitianuserID'];
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if($conn->connect_error){
         die("Connection failed :" . $conn->connect_error);
     }
@@ -65,7 +65,7 @@ if(isset($_POST['update'])){
 }
 // create goal
 if(isset($_POST['create_goal'])){
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if($conn->connect_error){
         die("Connection failed :" . $conn->connect_error);
     }

@@ -272,7 +272,7 @@ font-size: 15px;
         <div id="breakfast">
           <?php
                 $date = date('Y-m-d');
-                $conn = new mysqli("localhost", "root", "", "infits");
+                $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
                 if($conn->connect_error){
                         die("Connection failed :" . $conn->connect_error);
                 }
@@ -308,7 +308,7 @@ font-size: 15px;
           <div id="lunch">
           <?php
                 
-                $conn = new mysqli("localhost", "root", "", "infits");
+                $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
                 if($conn->connect_error){
                         die("Connection failed :" . $conn->connect_error);
                 }
@@ -343,7 +343,7 @@ font-size: 15px;
 
           <div id="snack">
           <?php
-                $conn = new mysqli("localhost", "root", "", "infits");
+                $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
                 if($conn->connect_error){
                         die("Connection failed :" . $conn->connect_error);
                 }
@@ -378,7 +378,7 @@ font-size: 15px;
           <div id="dinner">
           <?php
       
-                $conn = new mysqli("localhost", "root", "", "infits");
+                $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
                 if($conn->connect_error){
                         die("Connection failed :" . $conn->connect_error);
                 }

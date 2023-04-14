@@ -677,7 +677,7 @@
 
     <?php
 
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
 
     if ($conn->connect_error) {
         die("Connection Failed: " . $conn->connect_error);

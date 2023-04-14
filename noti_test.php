@@ -81,7 +81,7 @@ $time = date("Y-m-d H:i:s");
         
        <div id="ref">
        <?php
-        $conn = mysqli_connect('localhost','root', '', 'infits');
+        $conn = mysqli_connect("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
         if($conn == false){
                 dir('Error: Cannot connect');
         }

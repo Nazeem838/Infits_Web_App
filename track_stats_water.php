@@ -14,7 +14,7 @@ if(isset($_POST['savegoal'])){
     $client = $_POST['clientid'];
     $dietition = $_POST['dietition'];
     $goal =$_POST['setgoal'];
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
 
     if($conn->connect_error){
         die("Connection failed :" . $conn->connect_error);
@@ -50,7 +50,7 @@ if(isset($_POST['savegoal'])){
 // This can be more Simple by String Concatination
 function fetchDataSql($clientId,$from_date, $to_date, $isCustom=0){
     // Connect to Database
-    $conn = new mysqli("localhost", "root", "", "infits");
+    $conn = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
     if($conn->connect_error){
         die("Connection failed :" . $conn->connect_error);
     }

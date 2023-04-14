@@ -6,7 +6,7 @@
     $_SESSION["name"] = $_POST["name"];
     $_SESSION["email"] = $_POST["email"];
 
-    $mysqli = new mysqli('localhost', 'root', '', 'infits');
+    $mysqli = new mysqli("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
 
     $query = "SELECT * FROM dietitian WHERE email='".$_POST["email"]."'";
     $data = $mysqli->query($sql);

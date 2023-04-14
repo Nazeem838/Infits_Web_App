@@ -1,5 +1,5 @@
 <?php
-        $con = mysqli_connect("localhost", "root", "", "infits");
+        $con = mysqli_connect("db4free.net", "infits_free_test", "EH6.mqRb9QBdY.U", "infits_db");
 
 
         $search = $_GET['search'];
